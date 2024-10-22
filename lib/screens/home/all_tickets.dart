@@ -19,11 +19,15 @@ class AllTickets extends StatelessWidget {
       ),
       body: ListView(
         children: [
-         SingleChildScrollView(
-           child: Column(
-             children: ticketList.map((singleTicket)=>TicketView(ticket: singleTicket,fullScreen: true,)).toList()
-           ),
-         )
+          SingleChildScrollView(
+            child: Column(
+                children: ticketList
+                    .map((singleTicket) => TicketView(
+                          ticket: singleTicket,
+                          fullScreen: true,
+                        ))
+                    .toList()),
+          )
         ],
       ),
     );

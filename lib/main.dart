@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ticket/Basement/bottom_nav_bar.dart';
-import 'package:ticket/screens/all_tickets.dart';
+import 'package:ticket/screens/home/all_hotels.dart';
+import 'package:ticket/screens/home/all_tickets.dart';
+import 'package:ticket/screens/search/flights_cards.dart';
 
 void main() {
   runApp(
@@ -22,7 +24,9 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       routes: {
         "/": (context) => const BottomNav(),
-        "allTickets": (context) => const AllTickets()
+        "allTickets": (context) => const AllTickets(),
+        "allHotels": (context) => const AllHotels(),
+        "flightscard": (context) => const FlightsCards()
       },
     );
   }
