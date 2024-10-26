@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
         "/": (context) => const BottomNav(),
         "allTickets": (context) => const AllTickets(),
         "allHotels": (context) => const AllHotels(),
-        "flightscard": (context) => const FlightsCards()
+        "flights card": (context) => const FlightsCards()
       },
     );
   }

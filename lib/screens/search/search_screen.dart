@@ -15,6 +15,7 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: Appstyle.primaryColor,
         body: ListView(
+          scrollDirection: Axis.vertical,
           children: [
             Container(
               padding: const EdgeInsets.all(15),
@@ -48,7 +49,7 @@ class SearchScreen extends StatelessWidget {
                     eventName: 'Upcoming Flights',
                     expand: 'view all',
                     func: () {
-                      Navigator.pushNamed(context, 'flightscard');
+                      Navigator.pushNamed(context, 'flights card');
                     },
                   ),
                   const SizedBox(
