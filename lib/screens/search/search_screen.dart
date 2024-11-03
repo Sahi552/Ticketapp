@@ -4,7 +4,7 @@ import 'package:ticket/Basement/widget/event_expand.dart';
 import 'package:ticket/Basement/widget/flight.dart';
 import 'package:ticket/Basement/widget/ticket_search_btn.dart';
 import 'package:ticket/Basement/widget/ticket_search_input.dart';
-import 'package:ticket/Basement/widget/ticket_tab.dart';
+import 'package:ticket/Basement/widget/switchTab.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -27,7 +27,10 @@ class SearchScreen extends StatelessWidget {
                     style: Appstyle.headLine02.copyWith(fontSize: 40),
                   ),
                   const SizedBox(height: 20),
-                  const TicketTab(),
+                  const SwitchTab(
+                    first: Text('Airline Tickets'),
+                    second: Text("Flights"),
+                  ),
                   const SizedBox(height: 20),
                   const TicketSearchInput(
                     icon: Icon(Icons.flight_land_outlined),

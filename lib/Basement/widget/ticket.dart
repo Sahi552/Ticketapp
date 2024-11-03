@@ -11,15 +11,17 @@ import 'package:ticket/Basement/widget/ticket_text_info.dart';
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
   final bool fullScreen;
-  const TicketView({super.key, required this.ticket, this.fullScreen = false});
+  final bool? isColor;
+  const TicketView(
+      {super.key, required this.ticket, this.fullScreen = false, this.isColor});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final width = size.width * 0.85;
+    final width = size.width * 0.90;
     return SizedBox(
       width: width,
-      height: 179,
+      height: 150,
       child: Container(
         margin: EdgeInsets.only(right: fullScreen == true ? 0 : 16),
         child: Column(
@@ -27,7 +29,7 @@ class TicketView extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: Appstyle.ticketColor1,
+                  color: isColor == null ? Appstyle.ticketColor1 : Colors.white,
                   borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(12),
                     topLeft: Radius.circular(12),
@@ -40,6 +42,7 @@ class TicketView extends StatelessWidget {
                     children: [
                       TicketText(
                         name: ticket["from"]["code"],
+                        isColor: isColor == null ? null : true,
                       ),
                       Expanded(child: Container()),
                       const BigDot(),
@@ -64,6 +67,7 @@ class TicketView extends StatelessWidget {
                       Expanded(child: Container()),
                       TicketText(
                         name: ticket["to"]["code"],
+                        isColor: isColor == null ? null : true,
                       ),
                     ],
                   ),
@@ -77,14 +81,19 @@ class TicketView extends StatelessWidget {
                           width: 100,
                           child: TicketTextInfo(
                             name: ticket["from"]["name"],
+                            isColor: isColor == null ? null : true,
                           )),
                       Expanded(child: Container()),
-                      TicketTextInfo(name: ticket["flying time"]),
+                      TicketTextInfo(
+                        name: ticket["flying time"],
+                        isColor: isColor == null ? null : true,
+                      ),
                       Expanded(child: Container()),
                       SizedBox(
                         width: 100,
                         child: TicketTextInfo(
                           name: ticket["to"]["name"],
+                          isColor: isColor == null ? null : true,
                           align: TextAlign.end,
                         ),
                       )
@@ -95,26 +104,35 @@ class TicketView extends StatelessWidget {
             ),
             //between two colors
             Container(
-              color: Appstyle.ticketColor2,
-              child: const Row(
+              color: isColor == null ? Appstyle.ticketColor2 : Colors.white,
+              child: Row(
                 children: [
-                  BorderDot(isRight: false),
+                  const BorderDot(
+                    isRight: false,
+                  ),
                   Expanded(
                       child: AppLayout(
                     randomDivider: 16,
                     width: 6,
+                    isColor: isColor == null ? null : true,
                   )),
-                  BorderDot(isRight: true),
+                  const BorderDot(
+                    isRight: true,
+                  ),
                 ],
               ),
             ),
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: Appstyle.ticketColor2,
-                  borderRadius: const BorderRadius.only(
-                    bottomRight: Radius.circular(12),
-                    bottomLeft: Radius.circular(12),
+                  color: isColor == null ? Appstyle.ticketColor2 : Colors.white,
+                  borderRadius: BorderRadius.only(
+                    bottomRight: isColor == null
+                        ? const Radius.circular(12)
+                        : Radius.zero,
+                    bottomLeft: isColor == null
+                        ? const Radius.circular(12)
+                        : Radius.zero,
                   )),
               //ticket orange part
               child: Column(
@@ -126,15 +144,18 @@ class TicketView extends StatelessWidget {
                         topText: ticket["date"],
                         bottomText: 'date',
                         alignment: CrossAxisAlignment.start,
+                        isColor: isColor == null ? null : true,
                       ),
                       TicketColumnText(
                         topText: ticket["depature_Time"],
-                        bottomText: 'Depature time',
+                        bottomText: 'Departure time',
+                        isColor: isColor == null ? null : true,
                       ),
                       TicketColumnText(
                         topText: ticket["number"],
                         bottomText: 'Number',
                         alignment: CrossAxisAlignment.end,
+                        isColor: isColor == null ? null : true,
                       ),
                     ],
                   ),
