@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ticket/Basement/bottom_nav_bar.dart';
+import 'package:ticket/Basement/widget/hotel.dart';
 import 'package:ticket/screens/home/all_hotels.dart';
 import 'package:ticket/screens/home/all_tickets.dart';
 import 'package:ticket/screens/search/flights_cards.dart';
+import 'package:ticket/screens/ticket/ticket_screen.dart';
 
 void main() {
   runApp(
@@ -26,7 +28,9 @@ class _MyAppState extends State<MyApp> {
         "/": (context) => const BottomNav(),
         "allTickets": (context) => const AllTickets(),
         "allHotels": (context) => const AllHotels(),
-        "flights card": (context) => const FlightsCards()
+        "flights card": (context) => const FlightsCards(),
+        "ticket": (context) => const TicketScreen(),
+        "hotelView": (context) => const HotelView()
       },
     );
   }

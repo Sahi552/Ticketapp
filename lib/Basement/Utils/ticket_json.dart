@@ -23,4 +23,28 @@ List<Map<String, dynamic>> ticketList = [
     'depature_Time': '02:00 AM',
     'number': '10',
   },
+  {
+    'from': {'code': 'Uk', 'name': 'United Kingdom'},
+    'to': {'code': 'IT', 'name': 'Italy'},
+    'flying time': '1H 00M',
+    'date': '6 february',
+    'depature_Time': '05:00 AM',
+    'number': '5',
+  },
+  {
+    'from': {'code': 'IN', 'name': 'Indonesia'},
+    'to': {'code': 'SA', 'name': 'South America'},
+    'flying time': '1H 60M',
+    'date': '8 December',
+    'depature_Time': '04:00 PM',
+    'number': '2',
+  },
+  {
+    'from': {'code': 'UA', 'name': 'Ukanda'},
+    'to': {'code': 'WK', 'name': 'Wakanda'},
+    'flying time': '4H 3M',
+    'date': '10 March',
+    'depature_Time': '19:00 PM',
+    'number': '7',
+  },
 ];

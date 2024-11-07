@@ -21,7 +21,7 @@ class TicketView extends StatelessWidget {
     final width = size.width * 0.90;
     return SizedBox(
       width: width,
-      height: 150,
+      height: 154,
       child: Container(
         margin: EdgeInsets.only(right: fullScreen == true ? 0 : 16),
         child: Column(
@@ -45,11 +45,13 @@ class TicketView extends StatelessWidget {
                         isColor: isColor == null ? null : true,
                       ),
                       Expanded(child: Container()),
-                      const BigDot(),
+                      BigDot(
+                        isColor: isColor == true ? true : null,
+                      ),
                       Expanded(
                           child: Stack(alignment: Alignment.center, children: [
                         const SizedBox(
-                          height: 26,
+                          height: 20,
                           child: AppLayout(
                             randomDivider: 6,
                           ),
@@ -57,13 +59,17 @@ class TicketView extends StatelessWidget {
                         Center(
                           child: Transform.rotate(
                               angle: 1.5,
-                              child: const Icon(
+                              child: Icon(
                                 Icons.local_airport_outlined,
-                                color: Colors.white,
+                                color: isColor == true
+                                    ? Colors.lightBlueAccent
+                                    : Colors.white,
                               )),
                         ),
                       ])),
-                      const BigDot(),
+                      BigDot(
+                        isColor: isColor == true ? true : null,
+                      ),
                       Expanded(child: Container()),
                       TicketText(
                         name: ticket["to"]["code"],

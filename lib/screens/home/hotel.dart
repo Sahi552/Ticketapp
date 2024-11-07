@@ -13,8 +13,8 @@ class Hotel extends StatelessWidget {
       margin: EdgeInsets.only(
           right: fullscreen == true ? 0 : 16,
           bottom: fullscreen == true ? 16 : 0),
-      height: 350,
-      width: size.width * 0.6,
+      height: 250,
+      width: size.width * 0.5,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: Appstyle.ticketColor1),
@@ -22,42 +22,39 @@ class Hotel extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 350 / 2,
+            height: 130,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Appstyle.ticketColor1, width: 5),
                 image: DecorationImage(
                     image: AssetImage(hotel['image']), fit: BoxFit.cover)),
-          ),
-          const SizedBox(
-            height: 10,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 12),
             child: Text(
               hotel['hotel_name'],
-              style: Appstyle.headLine02.copyWith(
-                  color: Appstyle.primaryColor, fontWeight: FontWeight.w500),
+              style: Appstyle.headLine04.copyWith(fontWeight: FontWeight.w600),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 12),
             child: Text(
               hotel['place'],
-              style: Appstyle.headLine01.copyWith(color: Appstyle.primaryColor),
+              style: Appstyle.headLine01.copyWith(color: Appstyle.hotelText),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 12),
             child: Text(
               hotel['rent'],
-              style: Appstyle.headLine01.copyWith(color: Appstyle.primaryColor),
+              style: Appstyle.headLine01.copyWith(color: Appstyle.hotelText),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 12),
             child: Text(
               hotel['special'],
-              style: Appstyle.headLine01.copyWith(color: Appstyle.primaryColor),
+              style: Appstyle.headLine01.copyWith(color: Appstyle.hotelText),
             ),
           ),
         ],
