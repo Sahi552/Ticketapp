@@ -93,24 +93,37 @@ class Flight extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Container(
-              width: width * .44,
-              height: 168,
-              decoration: BoxDecoration(
-                  color: Appstyle.ticketColor2,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey.shade200,
-                        blurRadius: 3,
-                        spreadRadius: 3)
-                  ]),
-              child: Center(
-                  child: Text(
-                'Stay Happy \n Ride Happy',
-                style: Appstyle.headLine02.copyWith(color: Colors.white),
-              )),
-            )
+            Stack(children: [
+              Container(
+                width: width * .44,
+                height: 168,
+                decoration: BoxDecoration(
+                    color: Appstyle.ticketColor2,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey.shade200,
+                          blurRadius: 3,
+                          spreadRadius: 3)
+                    ]),
+                child: Center(
+                    child: Text(
+                  'Stay Happy \n Ride Happy',
+                  style: Appstyle.headLine02.copyWith(color: Colors.white),
+                )),
+              ),
+              Positioned(
+                left: 130,
+                bottom: 120,
+                child: Container(
+                  height: 80,
+                  width: 80,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey, width: 10),
+                      shape: BoxShape.circle),
+                ),
+              )
+            ])
           ],
         )
       ],

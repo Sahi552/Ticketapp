@@ -29,6 +29,12 @@ class _TicketScreenState extends State<TicketScreen> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Tickets',
+          style: Appstyle.headLine02.copyWith(fontSize: 40),
+        ),
+      ),
       backgroundColor: Appstyle.primaryColor,
       body: Stack(
         children: [
@@ -39,11 +45,6 @@ class _TicketScreenState extends State<TicketScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Tickets',
-                    style: Appstyle.headLine02.copyWith(fontSize: 40),
-                  ),
-                  const SizedBox(height: 20),
                   const SwitchTab(
                     first: Text('Upcoming'),
                     second: Text('Previous'),

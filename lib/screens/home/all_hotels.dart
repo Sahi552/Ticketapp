@@ -12,27 +12,27 @@ class AllHotels extends StatelessWidget {
         title: Text('All Hotels', style: Appstyle.headLine02),
         centerTitle: true,
       ),
-      body: GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, "hotelView");
-        },
-        child: Container(
-          margin: const EdgeInsets.only(left: 16),
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 15,
-                childAspectRatio: 1,
-                mainAxisSpacing: 15,
-              ),
-              itemCount: hotelList.length,
-              itemBuilder: (BuildContext context, int index) {
-                var singleHotel = hotelList[index];
-                return HotelGrid(hotel: singleHotel);
-              },
+      body: Container(
+        margin: const EdgeInsets.only(left: 16),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 15,
+              childAspectRatio: 1,
+              mainAxisSpacing: 15,
             ),
+            itemCount: hotelList.length,
+            itemBuilder: (BuildContext context, int index) {
+              var singleHotel = hotelList[index];
+              return GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, "hotelView",
+                        arguments: {"index2": index});
+                  },
+                  child: HotelGrid(hotel: singleHotel));
+            },
           ),
         ),
       ),
