@@ -5,6 +5,7 @@ import 'package:ticket/screens/home/all_hotels.dart';
 import 'package:ticket/screens/home/all_tickets.dart';
 import 'package:ticket/screens/search/flights_cards.dart';
 import 'package:ticket/screens/ticket/ticket_screen.dart';
+import 'package:ticket/Basement/Res/styles.dart';
 
 void main() {
   runApp(
