@@ -9,6 +9,8 @@ class Appstyle {
   static Color ticketColor1 = const Color(0xFF2980b9);
   static Color ticketColor2 = const Color(0xFFf88063);
   static Color hotelText = Colors.white;
+  static Color paleblue = const Color(0xFF5dade2);
+  static Color blue = Colors.blue;
 
   //textstyle
   static TextStyle headLine01 = const TextStyle(
@@ -32,5 +34,11 @@ class Appstyle {
     fontSize: 22,
     fontWeight: FontWeight.bold,
     color: Colors.white,
+  );
+
+  static TextStyle headLine05 = const TextStyle(
+    fontSize: 50,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
   );
 }
